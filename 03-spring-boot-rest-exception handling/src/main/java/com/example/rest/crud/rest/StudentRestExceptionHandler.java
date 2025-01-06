@@ -23,7 +23,7 @@ public class StudentRestExceptionHandler {
 
     // to handle generic exceptions like abcd instead of integers
     @ExceptionHandler
-    public ResponseEntity<StudentErrorResponse> handleException(Exception exc) {
+    public ResponseEntity<StudentErrorResponse> handleGenericException(Exception exc) {
         //create a student error response object
         StudentErrorResponse error = new StudentErrorResponse();
         error.setMessage(exc.getMessage());
@@ -33,5 +33,8 @@ public class StudentRestExceptionHandler {
         // return Response Entity
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
+
+
+
 
 }
